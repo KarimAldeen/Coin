@@ -10,13 +10,13 @@ interface formUtilCommon {
 interface ObjectToEdit extends formUtilCommon {
     id?:number,
     is_active:boolean,
-    social_media_sort:number  
+      
 }
 
 export interface InitialValues extends ObjectToEdit {
     id?:number,
     is_active:boolean,
-    social_media_sort:number
+    
 }
 interface ValidateSchema  extends formUtilCommon{
 
@@ -31,7 +31,6 @@ export const getInitialValues = (objectToEdit: ObjectToEdit | null = null): Init
     social_media_link:objectToEdit?.social_media_link?? "",
     social_media_image:objectToEdit?.social_media_image?? "",
     is_active:objectToEdit?.is_active?? true,
-    social_media_sort:objectToEdit?.social_media_sort?? 1,
   }
 };
 

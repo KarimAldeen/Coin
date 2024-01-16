@@ -26,6 +26,7 @@ import PrivacyPage from "./Pages/Informaition/Privacy/PrivacyPage";
 import AboutUsPage from "./Pages/Informaition/AboutUs/AboutUsPage";
 import SocialMediaPage from "./Pages/SocialMedia/SocialMediaPage";
 import CategoryPage from "./Pages/category/CategoryPage";
+import AdsPage from "./Pages/ads/AdsPage";
 
 
 interface RoutesLinksType {
@@ -46,6 +47,13 @@ export const RoutesLinks: RoutesLinksType[] = [
         element: <HomePage />,
         icon: <FaHome />,
         href: "/",
+    },
+    {
+        name: "Ads",
+        
+        icon: <FiMail size={20} />,
+        href: "/ads",
+        element: <AdsPage/>,
     },
     {
         name: "category",

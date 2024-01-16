@@ -2,36 +2,52 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Actions from "../../Components/Ui/tables/Actions";
+import ColumnsImage from "../../Components/Columns/ColumnsImage";
+import { useDeleteAds } from "../../api/ads";
 
-function fnDelete(props :any ){}
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
+  const deleteMutation = useDeleteAds();
+
 
   return useMemo(
     () => [
  
       {
-        name: t("email"),
-        sortable: false,
+        name: t("image"),
         center: "true",
-        cell: (row:any) => row?.email
+        cell: (row: any) => {
+          return (
+            <ColumnsImage src={row?.translations[0]?.image} />
+          )
+        }
+      },
+      {
+        name: t("imageAr"),
+        center: "true",
+        cell: (row: any) => {
+          return (
+            <ColumnsImage src={row?.translations[1]?.image} />
+          )
+        }
       },
      
       {
         name: "#",
         sortable: false,
         center: "true",
-        cell: (row) => (
+        cell: (row:any) => (
             <Actions
 
             // importnat to return the row in on Edit Function to store in objectToEdit That Upper in Edit Modal 
               onEdit={() => row}
               onView={()=>{}}
+              showView={false}
               objectToEdit={row}
               showEdit={true}
               // showDelete={false}
-              onDelete={() => fnDelete({ id: row.id })}
+              onDelete={() => deleteMutation.mutate({ ads_id: row.id })}
             />
         ),
       },

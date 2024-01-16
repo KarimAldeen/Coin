@@ -43,6 +43,7 @@ const App = () => {
             return(
               <Route 
           path={item.href}
+          key={item}
            element={
           <Suspense fallback={<Loading />} >
             <Layout>  

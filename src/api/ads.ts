@@ -5,8 +5,8 @@ import useGetQuery from "./helper/useGetQuery"
 import useUpdateMutation from "./helper/useUpdateMutation"
 
   const API = {
-    GET: "/api/admin/ads",
-    ADD: "/api/admin/ads/create",
+    GET: "/api/admin/ads/getAll",
+    ADD: "/api/admin/ads/add",
     UPDATE: "/api/admin/ads/update",
     DELETE: "/api/admin/ads/delete",
   };

@@ -39,11 +39,6 @@ const useTableColumns :any = () => {
         center: "true",
         cell: (row: any) => row?.social_media_link
       },
-      {
-        name: t("sort"),
-        center: "true",
-        cell: (row: any) => row?.social_media_sort
-      },
       
       {
         name: t("status"),
@@ -78,7 +73,7 @@ const useTableColumns :any = () => {
               objectToEdit={row}
               showEdit={true}
               showView={false}
-              onDelete={() => deleteMutation.mutate({ id: row.id })}
+              onDelete={() => deleteMutation.mutate({ social_media_id: row.id })}
               />
         ),
       },

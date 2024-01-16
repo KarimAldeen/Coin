@@ -13,7 +13,6 @@ function FormSocialMedia() {
   return (
     <Row xs={1} sm={1} md={1} lg={2} xl={2}>
     <Col>
-    <KarimField name="social_media_sort" type="number"label='social_media_image'  placeholder='placeholder' />
     <KarimField name="social_media_link" type="text"label='social_media_link'  placeholder='placeholder' />
 
     </Col>
