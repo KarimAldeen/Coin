@@ -4,7 +4,7 @@ import { ReactNode, lazy } from "react";
 
 import { Home } from "react-feather";
 import { AiFillQuestionCircle, AiFillStar} from "react-icons/ai"
-import {FaUserFriends , FaUser, FaHome, FaSadCry } from "react-icons/fa"
+import {FaUserFriends , FaUser, FaHome, FaSadCry, FaProductHunt } from "react-icons/fa"
 import { MdOutlineCategory, MdPrivacyTip } from "react-icons/md";
 import {DiDatabase} from "react-icons/di"
 import { FiMail } from "react-icons/fi";
@@ -27,6 +27,8 @@ import AboutUsPage from "./Pages/Informaition/AboutUs/AboutUsPage";
 import SocialMediaPage from "./Pages/SocialMedia/SocialMediaPage";
 import CategoryPage from "./Pages/category/CategoryPage";
 import AdsPage from "./Pages/ads/AdsPage";
+import ProductsPage from "./Pages/Products/ProductsPage";
+import ViewProduct from "./Pages/Products/View/Page";
 
 
 interface RoutesLinksType {
@@ -55,6 +57,21 @@ export const RoutesLinks: RoutesLinksType[] = [
         href: "/ads",
         element: <AdsPage/>,
     },
+    {
+        name: "Products",
+        
+        icon: <FaProductHunt size={20} />,
+        href: "/products",
+        element: <ProductsPage/>,
+    },
+     {
+        name: "ViewProduct",
+        icon: <FaProductHunt size={20} />,
+        href: "/products/:id",
+        element: <ViewProduct/>,
+        hidden : true,
+    },
+    
     {
         name: "category",
         
