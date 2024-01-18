@@ -12,12 +12,13 @@ const useTableColumns = () => {
         () => [
           
             {
-                name: t("driver_name"),
+                name: t("order_code"),
                 sortable: false,
                 center: true,
                 cell:(row:any)=>{
-                   
-                    return (row?.driver?.full_name)
+                    console.log(row);
+                    
+                    return (row?.order_code)
                 }
 
             },
@@ -26,15 +27,14 @@ const useTableColumns = () => {
                 name: t("order_total"),
                 sortable: true,
                 center: true,
-                selector:"average_cost"
+                cell:(row)=>row["order_total"]
             },
             {
                 name: t("order_status"),
                 sortable: false,
                 center: true,
                 cell:(row:any)=><span style={{
-                    backgroundColor:row.status==='accepted'||row.status==='complete'||row.status==='pick_up'?"#28c76f":row.status==='pending'?'#b8c2cc':"#ff0000"
-                    ,padding:8, color:'white',borderRadius:10,fontSize:10}}>{t(row.status)}</span>
+                    padding:8, color:'black',borderRadius:10,fontSize:10}}>{t(row.order_status)}</span>
                 
             },
             {

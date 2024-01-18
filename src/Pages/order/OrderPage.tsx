@@ -24,7 +24,7 @@ const OrderPage = () => {
   
   //Table Content -- Data + Columns
   const { data, isLoading , status  } = useGetOrders({search});
-  console.log(status);
+  console.log(data);
   
   const totalRows = data?.pagination?.total || 0;
 
