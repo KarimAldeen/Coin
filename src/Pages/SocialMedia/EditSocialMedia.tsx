@@ -25,7 +25,7 @@ function EditSocialMedia() {
      getInitialValues={getInitialValues(objectToEdit)} 
      handleSubmit={handleSubmit}
      status={status as QueryStatusEnum}
-     headerText='Edit Modal' 
+     headerText='edit' 
      getValidationSchema={getValidationSchema(objectToEdit)}>
       <FormSocialMedia />
     </LayoutModal>

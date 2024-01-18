@@ -14,12 +14,22 @@ const useTableColumns = () => {
     () => [
 
       {
-        name: t("image"),
+        name: t("image_en"),
         sortable: false,
         center: true,
         selector: "slider_image",
         cell: (row:any) => (
-          <ColumnsImage  src={row?.slider_image}  />
+          <ColumnsImage  src={row?.slider_translations.find((translate:any) => translate.locale == '1')?.image}  />
+        ),
+      },
+      
+      {
+        name: t("image_ar"),
+        sortable: false,
+        center: true,
+        selector: "slider_image",
+        cell: (row:any) => (
+          <ColumnsImage  src={row?.slider_translations.find((translate:any) => translate.locale == '2')?.image}  />
         ),
       },
       {
@@ -30,13 +40,7 @@ const useTableColumns = () => {
           <ToggleStatus  object={row} toggleMutation={toggleMutation} />
         ),
       },
-      {
-        name: t("is_ads"),
-        center: true,
-        cell: (row:any) => (
-         <>{row?.is_ads + ''}</>
-        ),
-      },
+     
       {
         name: "#",
         sortable: false,

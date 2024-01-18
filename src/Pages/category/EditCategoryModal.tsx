@@ -24,7 +24,7 @@ function EditCategoryModal() {
      isAddModal={false}
      getInitialValues={getInitialValues(objectToEdit)} 
      handleSubmit={handelSubmit}
-     headerText='Edit Modal' 
+     headerText='edit' 
      getValidationSchema={getValidationSchema(objectToEdit)}>
       <FormCategory />
     </LayoutModal>

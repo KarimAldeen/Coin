@@ -1,59 +1,57 @@
-import React, { useRef } from 'react'
-import { CancelOrderRafeeq, useGetSingleOrder } from 'api/orders';
-import { useParams } from 'react-router-dom';
-import Error404 from 'views/pages/misc/error/404';
-import SpinnerComponent from 'components/@vuexy/spinner/Fallback-spinner';
+import Reac  from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Card, CardBody, CardFooter, CardHeader, CardTitle } from 'reactstrap';
-import {  useBackendLanguageCode, useTranslation } from 'utility/language';
-import StatusActionController from 'components/StatusActionController';
 import OrderForm from './OrderForm';
-import { history } from "../../../../history";
 import DataTable from 'react-data-table-component';
 import useTableColumns from './useTableColumns';
-import { TableSpinner } from 'views/components/TableSpinner';
+import { useTranslation } from 'react-i18next';
+import { useGetSingleOrder } from '../../../api/order';
+import LoadingPage from '../../../Layout/app/LoadingPage';
+import { history } from '../../../ProviderContainer';
+import StatusOrderController from './StatusOrderController';
 
 
 
-import { LoadingButton } from 'components/input';
 
 
 
 export default function Order() {
     const { id } = useParams();
-    const t = useTranslation();
+    const [t] = useTranslation();
 
+
+
+    const navigate  = useNavigate()
    
 
-    
-    const deletorder = CancelOrderRafeeq()
     const { data, isLoading, notFound } = useGetSingleOrder({order_id: id })
 
    
     const order = data || {};
 
     const columns = useTableColumns();
-    const items = order?.items || [];
+    const items = order?.items ? JSON.parse(order?.items || " ") : [];
 
+    console.log(items);
 
-
-
+console.log(order);
     
     if (isLoading) {
-        return (<SpinnerComponent />)
+        return (<LoadingPage />)
     }
 
     return (
         <Card>
-            <CardHeader>
+            <CardHeader style={{display:"flex" , justifyContent:"space-between" , margin:"20px"}}> 
                 <CardTitle>
 
                     <p>{t("order_code")} : {order?.order_code}</p>
                 </CardTitle>
 
-              <span style={{display:"flex" , height:37, marginRight:7, }}>
+              <span style={{display:"flex" , height:37, marginRight:7,justifyContent:"space-between" }}>
          
                 <Button
-                    onClick={() => history.goBack()}
+                    onClick={() => navigate(-1)}
                     color="danger"
                 >
                     {t("back")}
@@ -65,7 +63,7 @@ export default function Order() {
             <div style={{padding:"1.5rem",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
 
   
-                <StatusActionController order_status={order.order_status} order_id={order.id} />
+                <StatusOrderController order_status={order.order_status} order_id={order.id} />
             
 
           <div>
@@ -73,21 +71,16 @@ export default function Order() {
           </div>
             </div>
 
-
-      
-
-
-
             <CardBody style={{padding:"0rem 1.5rem"}}>
 
                 <OrderForm order={order} />
                 <DataTable
                     columns={columns}
-                    data={JSON.parse(items)}
+                    data={items}
                     progressPending={isLoading}
-                    progressComponent={<TableSpinner />}
-                    noDataComponent={<h6 className="my-4">{t("no_records")}</h6>}
-                    noHeader
+               
+                    // noDataComponent={<h6 className="my-4">{("no_records")}</h6>}
+                    // noHeader
                 
                 />
 

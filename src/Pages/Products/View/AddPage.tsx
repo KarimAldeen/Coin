@@ -12,56 +12,37 @@ import { useParams } from 'react-router-dom';
 import LoadingPage from '../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import { useGetSingleProduct, useUpdateProduct } from '../../../api/owner_products';
+import { useAddProduct, useGetSingleProduct } from '../../../api/owner_products';
 import BasicInfo2 from './BasicInfo2';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 
-const ViewProduct = () => {
-  const { setObjectToEdit, objectToEdit } = usePageState()
-  const {t} = useTranslation();
-  const { id } = useParams()
-  const { data } = useGetSingleProduct({product_id:id})
+const AddProductPage = () => {
+    
+
+    const {mutate , isLoading , isSuccess} = useAddProduct()
   const [BarStatus, setBarStatus] = useState({ value: 0, isLoading: false, isError: false, isSuccess: false })
-  const {mutate ,isSuccess} = useUpdateProduct()
   const handleSubmit = (values:any)=>{
 
-    values['product_id'] = id
+    console.log(values);
 
-    values['is_highlight'] =values['is_highlight']  == true ?1 :0 
-    values['is_most_purchase'] =values['is_most_purchase']  == true ?1 :0  
-
-    const formToSend =  getDataToSend(values)
-
-    mutate(formToSend)
-  }
-
-  useNavigateOnSuccess(isSuccess , '/products')
+    const  formToSend = getDataToSend(values)
 
 
-  useEffect(() => {
-    console.log(data);
+    mutate(formToSend);
     
-    setObjectToEdit(data);
+  }
+  const {t} = useTranslation();
 
+  useNavigateOnSuccess(isSuccess , '/products'  )
+  
 
-     
-  }, [data]);
-
-  useEffect(()=>{
-
-
-    return ()=>{
-      setObjectToEdit(null)
-      
-    }
-  },[])
 
   const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit, BarStatus };
 
 
   return (
     <div className='ViewPage'>
-      {objectToEdit && data ?
+  
         <ViewPage {...ViewProps}>
           <Tabs>
             <TabList>
@@ -80,7 +61,7 @@ const ViewProduct = () => {
     
           </Tabs>
         </ViewPage>
-        : <LoadingPage />}
+        
 
 
     </div>
@@ -88,4 +69,4 @@ const ViewProduct = () => {
 
 }
 
-export default ViewProduct
+export default AddProductPage

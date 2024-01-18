@@ -15,20 +15,20 @@ const useTableColumns :any = () => {
     () => [
  
       {
-        name: t("image"),
+        name: t("image_en"),
         center: "true",
         cell: (row: any) => {
           return (
-            <ColumnsImage src={row?.translations[0]?.image} />
+            <ColumnsImage src={row?.translations?.at(0)?.image} />
           )
         }
       },
       {
-        name: t("imageAr"),
+        name: t("image_ar"),
         center: "true",
         cell: (row: any) => {
           return (
-            <ColumnsImage src={row?.translations[1]?.image} />
+            <ColumnsImage src={row?.translations?.at(1)?.image} />
           )
         }
       },

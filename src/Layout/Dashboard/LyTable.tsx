@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 const LyTable = (props?: any) => {
     const {t} = useTranslation();
 
+  
   return (
     <div className='LayoutBody'>
       <Card>

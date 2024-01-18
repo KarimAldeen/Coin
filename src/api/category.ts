@@ -10,7 +10,7 @@ import useUpdateMutation from "./helper/useUpdateMutation"
     ADD: "/api/admin/category/add",
     UPDATE: "/api/admin/category/update",
     DELETE: "/api/admin/category/delete",
-    UPDATE_STATUS: `/api/admin/category/change_status`,
+    UPDATE_STATUS: `/api/admin/category/update_category_status`,
 
   };
 

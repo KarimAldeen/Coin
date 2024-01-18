@@ -911,6 +911,20 @@
         "driver order yesterday":"Driver order yesterday",
         "distance":"Distance",
         "Send Order To Nearst 5 Driver":"Send Order To Nearst 5 Driver",
-        "one":"One"    
+        "one":"One",
+        "Product_in_your_Application":"Product in you Application" ,
+        "category_in_your_Application":"Category in your Application",
+        "last_users":"Last Users",
+        "ads":"Ads",
+        "image_en":"Image en",
+        "image_ar":"Image ar",
+        "Products":"Products",
+        "slider":"Slider",
+        "contact":"Contact Us",
+        "contact_us_letter":"Contact Us Letter",
+        "message":"Message",
+        "category_name_en":"Category Name en",
+        "category_name_ar":"Category Name ar"
+
         
 }

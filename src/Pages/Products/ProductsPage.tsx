@@ -8,18 +8,25 @@ import { QueryStatusEnum } from '../../config/QueryStatus'
 import AddProductsModal from './AddProducts'
 import EditProducts from './EditProducts'
 import { useGetProducts } from '../../api/owner_products'
+import { Button } from 'antd'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+import AddButton from '../../Layout/Dashboard/AddButton/AddButton'
 
 function ProductsPage() {
 
     const column   =useTableColumns()
     const {data  ,status } = useGetProducts("")
     console.log(data);
-    
+    const [t] = useTranslation()
+    const navigate = useNavigate()
     
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader title={'social_media'}></DashHeader>
+      <DashHeader showAddButton={false} title={'products'}>
+        <AddButton  onClick={()=>navigate('/products/add',{replace:true})}></AddButton>
+      </DashHeader>
       
       <LyTable
         data={data?.data}

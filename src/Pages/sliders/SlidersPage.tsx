@@ -18,7 +18,7 @@ function SlidersPage() {
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader title={'Sliders'}></DashHeader>
+      <DashHeader title={'slider'}></DashHeader>
       
       <LyTable
         data={data}

@@ -19,6 +19,23 @@ const useTableColumns :any = () => {
       },
      
       {
+        name: t("name"),
+        sortable: false,
+        center: "true",
+        cell: (row:any) => row?.name
+      },
+      {
+        name: t("created_at"),
+        sortable: false,
+        center: "true",
+        cell: (row:any) => {
+          
+          const inputDate = new Date(row?.created_at)
+           return   `${inputDate.getFullYear()}-${(inputDate.getMonth() + 1)}-${(inputDate.getDate())} ${(inputDate.getHours())}:${(inputDate.getMinutes())}:${(inputDate.getSeconds())}`;
+
+        }
+      },
+      {
         name: "#",
         sortable: false,
         center: "true",
@@ -30,6 +47,8 @@ const useTableColumns :any = () => {
               onView={()=>{}}
               objectToEdit={row}
               showEdit={true}
+              showView={false}
+              showDelete={false}
               // showDelete={false}
               onDelete={() => fnDelete({ id: row.id })}
             />

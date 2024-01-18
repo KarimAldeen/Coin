@@ -4,8 +4,8 @@ import { ReactNode, lazy } from "react";
 
 import { Home } from "react-feather";
 import { AiFillQuestionCircle, AiFillStar} from "react-icons/ai"
-import {FaUserFriends , FaUser, FaHome, FaSadCry, FaProductHunt } from "react-icons/fa"
-import { MdOutlineCategory, MdPrivacyTip } from "react-icons/md";
+import {FaUserFriends , FaUser, FaHome, FaSadCry, FaProductHunt, FaBorderAll, FaAdversal } from "react-icons/fa"
+import { MdOutlineCategory, MdPrivacyTip, MdProductionQuantityLimits } from "react-icons/md";
 import {DiDatabase} from "react-icons/di"
 import { FiMail } from "react-icons/fi";
 import {CgUnavailable} from "react-icons/cg"
@@ -18,6 +18,8 @@ import { IoPersonAddSharp } from "react-icons/io5";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { TbBrandSocketIo } from "react-icons/tb";
 import { BsPersonFillAdd } from "react-icons/bs";
+import { FaMessage } from "react-icons/fa6";
+import { TfiLayoutSlider } from "react-icons/tfi";
 
 // Pages Import
 
@@ -29,6 +31,11 @@ import CategoryPage from "./Pages/category/CategoryPage";
 import AdsPage from "./Pages/ads/AdsPage";
 import ProductsPage from "./Pages/Products/ProductsPage";
 import ViewProduct from "./Pages/Products/View/Page";
+import OrderPage from "./Pages/order/OrderPage";
+import Order from "./Pages/order/view-one/Order";
+import AddProductPage from "./Pages/Products/View/AddPage";
+import ContactusPage from "./Pages/contactus/ContactusPage";
+import SlidersPage from "./Pages/sliders/SlidersPage";
 
 
 interface RoutesLinksType {
@@ -51,34 +58,53 @@ export const RoutesLinks: RoutesLinksType[] = [
         href: "/",
     },
     {
-        name: "Ads",
-        
-        icon: <FiMail size={20} />,
-        href: "/ads",
-        element: <AdsPage/>,
-    },
-    {
-        name: "Products",
-        
-        icon: <FaProductHunt size={20} />,
-        href: "/products",
-        element: <ProductsPage/>,
-    },
-     {
-        name: "ViewProduct",
-        icon: <FaProductHunt size={20} />,
-        href: "/products/:id",
-        element: <ViewProduct/>,
-        hidden : true,
-    },
-    
-    {
         name: "category",
         
         icon: <MdOutlineCategory  size={20} />,
         href: "/category",
         element: <CategoryPage/>,
     },
+    {
+        name: "Products", 
+        icon: <MdProductionQuantityLimits  size={20} />,
+        href: "/products",
+        element: <ProductsPage/>,
+    },
+    {
+        name: "order", 
+        icon: <FaBorderAll size={20} />,
+        href: "/order",
+        element: <OrderPage/>,
+    },
+  
+     {
+        name: "addProduct",
+        icon: <FaProductHunt size={20} />,
+        href: "/products/add",
+        element: <AddProductPage/>,
+        hidden : true,
+    },
+    {
+        name: "ads",
+        
+        icon: <FaAdversal  size={20} />,
+        href: "/ads",
+        element: <AdsPage/>,
+    },
+    {
+        name: "slider",
+        icon: <TfiLayoutSlider   size={20} />,
+        href: "/slider",
+        element: <SlidersPage/>,
+    },
+    {
+        name: "contact",
+        
+        icon: <FaMessage   size={20} />,
+        href: "/contact",
+        element: <ContactusPage/>,
+    },
+  
     {
         name: "social_media",
         
@@ -105,5 +131,25 @@ export const RoutesLinks: RoutesLinksType[] = [
         element: <AboutUsPage />
         },
       ],
+
+
+      
     },
+          // hidden 
+
+    {
+        name: "order", 
+        icon: <FaBorderAll  size={20} />,
+        href: "/order/:id",
+        element: <Order/>,
+        hidden:true
+    },
+   
+     {
+        name: "ViewProduct",
+        icon: <FaProductHunt size={20} />,
+        href: "/products/:id",
+        element: <ViewProduct/>,
+        hidden : true,
+    }, 
 ]

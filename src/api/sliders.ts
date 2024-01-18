@@ -6,11 +6,11 @@ import { useToggleStatus } from "./helper/useToggleStatus";
 import useUpdateMutation from "./helper/useUpdateMutation"
 
   const API = {
-    GET: "/api/admin/sliders",
-    ADD: "/api/admin/sliders/create",
-    UPDATE: "/api/admin/sliders/update",
-    DELETE: "/api/admin/sliders/delete",
-    UPDATE_STATUS: `/api/admin/slider/change_status`,
+    GET: "/api/admin/slider/getAll",
+    ADD: "/api/admin/slider/add",
+    UPDATE: "/api/admin/slider/update",
+    DELETE: "/api/admin/slider/delete",
+    UPDATE_STATUS: `/api/admin/slider/update_status`,
 
   };
 

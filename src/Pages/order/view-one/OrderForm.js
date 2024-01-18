@@ -1,16 +1,15 @@
-import { baseURL } from 'api/config';
 import React from 'react'
 import { Row, Col } from 'reactstrap'
-import { useTranslation } from 'utility/language'
 import classes from './OrderForm.module.scss';
+import { useTranslation } from 'react-i18next';
 export default function OrderForm({ order }) {
     
-    const t = useTranslation();
+    const [t] = useTranslation();
     return (
         <>
             <Row xs={1} sm={1} md={2} lg={3} xl={3}>
                 <Col className={classes.test} >
-                    <p >{t("customer_name")}{" : "}{order.customer?.full_name}</p>
+                    <p >{t("customer_name")}{" : "}{order.customer?.name}</p>
                     <p >{t("customer_phone_number")}{" : "}{order.customer?.phone}</p>
                     <p >{t("order_created_at")}{" : "}{order.created_at}</p>
                     <p >{t("payment_method")}{" : "}{t('cash_on_delivary')}</p>

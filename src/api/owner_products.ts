@@ -9,7 +9,7 @@ const API = {
   UPDATE: `/api/admin/product/update`,
   GET_SINGLE_PRODUCT: `/api/admin/product/getOne`,
   GET_ALL: `/api/admin/product/getAll`,
-  UPDATE_STATUS: `/api/admin/owner_product/update_status`,
+  UPDATE_STATUS: `/api/admin/product/update_status`,
   UPDATE_DETAILS: `/api/admin/owner_product/update`,
   UPDATE_IMAGES: `/api/admin/owner_product/update_images`,
   DELETE: `/api/admin/product/delete`,

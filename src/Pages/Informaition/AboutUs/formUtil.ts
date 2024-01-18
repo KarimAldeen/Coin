@@ -20,10 +20,10 @@ interface Values {
 export const getInitialValues = (about_us: AboutUs[]): Values => ({
   translated_fields: {
     1: {
-      about_us_description: about_us[1].locale === "en" ? about_us[1]?.content : about_us[0]?.content,
+      about_us_description: about_us[1].locale == "1" ? about_us[1]?.content : about_us[0]?.content,
     },
     2: {
-      about_us_description: about_us[1].locale === "ar" ? about_us[1]?.content : about_us[0]?.content,
+      about_us_description: about_us[1].locale == "2" ? about_us[1]?.content : about_us[0]?.content,
     },
   },
   about_us_image: "",

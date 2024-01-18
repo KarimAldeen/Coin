@@ -12,7 +12,7 @@ function EditSlidersModal() {
      isAddModal={false}
      getInitialValues={getInitialValues(objectToEdit)} 
      handleSubmit={() => { }}
-     headerText='Edit Modal' 
+     headerText='edit' 
      getValidationSchema={getValidationSchema(objectToEdit)}>
       <FormSliders />
     </LayoutModal>

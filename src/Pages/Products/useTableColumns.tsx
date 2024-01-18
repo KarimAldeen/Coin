@@ -10,12 +10,16 @@ import ColumnsImage from "../../Components/Columns/ColumnsImage";
 import LoadingSpinner from "../../Components/Ui/LoadingSpinner";
 import { Switch } from "antd";
 import { mapTranslatedProperties } from "../../utils/language/mapTranslatedProperties";
+import { useDeleteProduct, useUpdateProductStatus } from "../../api/owner_products";
+import { useNavigate } from "react-router-dom";
 
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
-  const toggleMutation = useUpdateSocialMediaStatus();
-  const deleteMutation = useDeleteSocialMedia();
+  const toggleMutation = useUpdateProductStatus();
+  const deleteMutation = useDeleteProduct();
+
+  const navigate  = useNavigate()
   const handleChange = (row:any)=> {
     const status = row?.is_active == '1' ? false  : true;  
 
@@ -82,11 +86,11 @@ const useTableColumns :any = () => {
 
             // importnat to return the row in on Edit Function to store in objectToEdit That Upper in Edit Modal 
               onEdit={() => row}
-              onView={()=>{}}
+              onView={()=> navigate('/products/'+row.id)}
               objectToEdit={row}
-              showEdit={true}
-              showView={false}
-              onDelete={() => deleteMutation.mutate({ social_media_id: row.id })}
+              showEdit={false}
+              showView={true}
+              onDelete={() => deleteMutation.mutate({ product_id: row.id })}
               />
         ),
       },

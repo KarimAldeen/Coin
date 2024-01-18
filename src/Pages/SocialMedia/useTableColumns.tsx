@@ -46,17 +46,8 @@ const useTableColumns :any = () => {
         cell: (row:any) => {
           console.log(row?.is_active);
           
-          if(toggleMutation?.isLoading && row?.is_active == '0'){
-            return <LoadingSpinner />  
-          }
-          return (
-            <div>
-              <p style={{margin:"0"}}>{t('pending')}</p>
-                <label>
-                  <Switch onChange={()=>handleChange(row)} checked={row?.is_active == '1'} />
-                </label>
-            </div>
-          )
+          return           <ToggleStatus object={row} toggleMutation={toggleMutation} />
+          
           
         },
       },

@@ -9,7 +9,7 @@ import Etaxi from './Etaxi';
 
 interface SidebarProps {}
 
-const Sidebar: React.FC<SidebarProps> = () => {
+const SideBar: React.FC<SidebarProps> = () => {
   const { pathname } = useLocation();
 
   const [isOpenSide, setIsOpenSide] = useState<boolean>(false);
@@ -34,10 +34,10 @@ const Sidebar: React.FC<SidebarProps> = () => {
 
   return (
     <div className={isOpenSide ? 'SideBar SideBar_Open' : 'SideBar noOpen'}>
-      <div className='SideBar_Top'>
-        <div onClick={handleImg}>
-         {/* <img src="../Layout/logorayan.png" width={isOpenSide ? 70 : 150} alt="" /> */}
-         <Etaxi/>
+      <div className='SideBar_Top' style={{display:"flex" , justifyContent:"space-around"}}>
+        <div onClick={handleImg} >
+         <img src="/logo.png" width={isOpenSide ? 50 :80}   alt="" className='bg-secondary' />
+         
         </div>
         <div className='HamburgerMenu' onClick={handleHamburgerMenu}>
           <GiHamburgerMenu />
@@ -99,4 +99,4 @@ const Sidebar: React.FC<SidebarProps> = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

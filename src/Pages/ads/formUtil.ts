@@ -9,8 +9,8 @@ export const getInitialValues = (objectToEdit: any | null = null) => {
    
   return {
     ads_id : objectToEdit?.id ?? "",
-    image_en:objectToEdit?.translations[0]?.image?? "" ,
-    image_ar:objectToEdit?.translations[1]?.image ?? "",
+    image_en:objectToEdit?.translations?.at(0)?.image?? "" ,
+    image_ar:objectToEdit?.translations?.at(1)?.image ?? "",
   }
 
 

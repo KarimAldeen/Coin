@@ -5,8 +5,10 @@ import { Checkbox } from 'antd';
 const CheckboxField = ({ name, label, placeholder, isDisabled, option, isMulti, onChange,Group, props }: any) => {
 
   const { t, formik } = useFormField(name, props)
-  const CheckboxhandleChange = (value: { value: string; label: React.ReactNode }) => {
-    formik.setFieldValue(name, value)
+  const CheckboxhandleChange = (value:any) => {
+    console.log(value.target.checked);
+    
+    formik.setFieldValue(name, value.target.checked)
 
   };
   return (
@@ -14,7 +16,7 @@ const CheckboxField = ({ name, label, placeholder, isDisabled, option, isMulti, 
       <Checkbox
         onChange={onChange || CheckboxhandleChange}
         disabled={isDisabled}
-
+        checked={formik.getFieldProps(name).value}
 
       >
         {t(label)}

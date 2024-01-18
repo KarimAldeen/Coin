@@ -18,7 +18,7 @@ function AdsPage() {
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader title={'Ads'}></DashHeader>
+      <DashHeader title={'ads'}></DashHeader>
       
       <LyTable
         data={data}

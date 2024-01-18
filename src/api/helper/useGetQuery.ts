@@ -19,7 +19,7 @@ function useGetQuery(key: string, url: string , params:any={},options:any={}) {
           logout()
 
       }
-      
+      return error
     },
     refetchOnWindowFocus: false,
     

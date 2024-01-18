@@ -7,9 +7,10 @@ import { Rating } from "react-simple-star-rating";
 
 
 interface RowData {
-    driver_name: string;
-    rate: number;
-    driver_id: string;
+   name:string ,
+   phone:string ,
+   email:string ,
+   id:number 
 }
 
 const useTableColumns = () => {
@@ -22,29 +23,33 @@ const useTableColumns = () => {
                 name: t("full_name"),
                 sortable: false,
                 center: true,
-                cell: (row: RowData) => row?.driver_name,
+                cell: (row: RowData) => row?.name,
             },
             {
-                name: t("rate"),
+                name: t("email"),
                 sortable: false,
                 center: true,
-                cell: (row: RowData) => (
-                    <Rating initialValue={row?.rate} size={23} readonly={true} />
-                ),
+                cell: (row: RowData) => row?.email,
             },
             {
-                name: "#",
-                selector: "action",
+                name: t("phone"),
                 sortable: false,
                 center: true,
-                cell: (row: RowData) => (
-                    <GrView
-                        onClick={() => navigate(`/information/driver/${row?.driver_id}`, {replace:true})}
-                        size={22}
-                        style={{ cursor: "pointer" }}
-                    />
-                ),
+                cell: (row: RowData) => row?.phone,
             },
+            //          {
+            //     name: "#",
+            //     selector: "action",
+            //     sortable: false,
+            //     center: true,
+            //     cell: (row: RowData) => (
+            //         <GrView
+            //             onClick={() => navigate(`/user/${row?.id}`, {replace:true})}
+            //             size={22}
+            //             style={{ cursor: "pointer" }}
+            //         />
+            //     ),
+            // },
         ];
 
         return columns;

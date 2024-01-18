@@ -950,7 +950,21 @@
         "driver order yesterday":"طلبات السائق اليوم الماضي",
         "distance":"المسافة",
         "Send Order To Nearst 5 Driver":"ارسل الطلب لاقرب 5 سائقين",
-        "one":"واحد"    
+        "one":"واحد"    ,
+        "Product_in_your_Application":"منتج في التطبق"   ,
+        "category_in_your_Application":"صنف داخل التطبيق",
+        "last_users":"اخر المستخدمين",
+        "ads":"اعلانات",
+        "image_en":"الصورة بالعربي ",
+        "image_ar":"الصورة بالنكليزي",
+        "Products":"المنتجات",
+        "slider":"المنزلق",
+        "contact":"تواصل معنا",
+        "contact_us_letter":"رسالة تواصل معنا ",
+        "message":"الرسالة",
+        "category_name_en":"اسم الصنف بالنكليزي",
+        "category_name_ar":"اسم الصنف بالعربي"
+
 
 
 

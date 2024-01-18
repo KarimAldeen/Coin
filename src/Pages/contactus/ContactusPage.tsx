@@ -7,27 +7,28 @@ import useTableColumns from './useTableColumns'
 import { useGetContactus} from '../../api/contactus'
 import { QueryStatusEnum } from '../../config/QueryStatus'
 import EditContactusModal from './EditContactusModal'
-import AddContactusModal from './AddContactusModal'
 
 function ContactusPage() {
 
     const column   =useTableColumns()
     const {data  ,status } = useGetContactus()
-
+  console.log(data);
+  
     
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader title={'Contactus'}></DashHeader>
+      <DashHeader  showAddButton={false} title={'Contactus'}></DashHeader>
       
       <LyTable
-        data={data}
+        data={data?.data}
+        total={data?.pagination?.total}
+        is_pagination={true}
         isLoading={false}
         columns={column}
       />
       
       <EditContactusModal />
-      <AddContactusModal />
       
     </DashBody>
   )

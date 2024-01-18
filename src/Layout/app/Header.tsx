@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuthState from '../../lib/state mangment/AuthState';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import WithDrawer from './WithDrawer';
-import Sidebar from './SideBar';
+import SideBar from './SideBar';
 
 type TUserData =
   {
@@ -45,7 +45,7 @@ const Header = () => {
           </div>
     }
     >
-    <Sidebar/>
+    <SideBar/>
     </WithDrawer>
       </div>
       <div className='Header_Right'>

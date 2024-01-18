@@ -14,7 +14,8 @@ function AddSlidersModal() {
   const [t] = useTranslation()
   const {mutate , status} = useAddSliders()
   const handelSubmit = (values:any )=>{
-
+      console.log(values);
+      
     const dataToSend = getDataToSend(values)
 
     mutate(dataToSend)

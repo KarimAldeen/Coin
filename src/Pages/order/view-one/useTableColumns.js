@@ -1,18 +1,16 @@
 import React from 'react'
-import { useTranslation } from 'utility/language'
-import { mapTranslatedProperties } from 'helpers/language';
-import HovarableImage from 'components/HovarableImage';
-import { baseURL } from 'api/config';
-import { useBackendLanguageCode } from 'utility/language';
+import { useTranslation } from 'react-i18next';
+import ColumnsImage from '../../../Components/Columns/ColumnsImage';
+import { mapTranslatedProperties } from '../../../utils/language/mapTranslatedProperties';
 export default function useTableColumns() {
-    const t = useTranslation();
-    const langCode = useBackendLanguageCode();
-    return React.useMemo(() => [
+    const [t] = useTranslation();
+    return  [
         {   
             name: t("id"),
             sortable: true, 
             center: true,
-            selector: "id"
+            cell:(row) => row.id
+            
         },
         {
             name: `${t('name')}`,
@@ -21,7 +19,7 @@ export default function useTableColumns() {
             cell: (row) => mapTranslatedProperties(
                 row.product_translations,
                 "name",
-                langCode ===1 ? 'en' : 'ar'
+                '1'
             )
         },
 
@@ -30,13 +28,12 @@ export default function useTableColumns() {
             sortable: false,
             center: true,
             cell: (row) => {
-                const imgSource = row.product_main_image
+                const imgSource = row?.product_main_image
                 return (
-                    <HovarableImage
-                        id={`custom_ad_image_en_${row.id}`}
-                        src={`${baseURL}${imgSource}`}
-                        width="35"
-                    />
+                   <ColumnsImage 
+                    src={imgSource}
+
+                   />
                 );
             },
         },
@@ -46,7 +43,8 @@ export default function useTableColumns() {
             name: t("product_quantity"),
             sortable: true,
             center: true,
-            selector: "product_quantity"
+            cell:(row)=>row?.product_quantity
+            
         },
 
         {
@@ -70,5 +68,5 @@ export default function useTableColumns() {
         },
 
 
-    ], [t, langCode])
+    ]
 }

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { LoadingButton } from '../../../../Components/Ui/LoadingButton';
 import { useNavigate } from 'react-router-dom';
     
-    export default function HighDriverRateTable({ most_driver_rate }:any) {
+    export default function LastUserTable({ most_driver_rate }:any) {
       const columns = useTableColumns();
       const {t} = useTranslation();
       const navigate  = useNavigate()
@@ -16,11 +16,11 @@ import { useNavigate } from 'react-router-dom';
       return (
         <Card>
       <div className='primary' style={{display:"flex" , justifyContent:"space-between" , padding:"20px", marginTop:"10px"}}>
-            {t("high_drivers_rate")}
+            {t("last_users")}
     
-            <LoadingButton color="primary" onClick={() => navigate("/Drivers" , {replace:true})}>
-              {t("show_all_driver")}
-            </LoadingButton>
+            {/* <LoadingButton color="primary" onClick={() => navigate("/user" , {replace:true})}>
+              {t("show_all_users")}
+            </LoadingButton> */}
           </div>
           <CardBody>
     

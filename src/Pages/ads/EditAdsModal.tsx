@@ -25,7 +25,7 @@ function EditAdsModal() {
      status={status as QueryStatusEnum}
      getInitialValues={getInitialValues(objectToEdit)} 
      handleSubmit={handleSubmit}
-     headerText='Edit Modal' 
+     headerText='edit' 
      getValidationSchema={getValidationSchema(objectToEdit)}>
       
       <FormAds />

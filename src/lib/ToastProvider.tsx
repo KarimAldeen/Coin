@@ -19,6 +19,7 @@ function ToastProvider({ children }: any) {
     draggable
     pauseOnHover
     theme="light"
+    style={{zIndex:"9999999999999999999"}}
      />
     {children}
     </>
