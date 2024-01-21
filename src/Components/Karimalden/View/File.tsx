@@ -8,7 +8,7 @@ import { ErrorMessage } from 'formik';
 
 const File = ({ name, label, onChange, isDisabled, props }: any) => {
   const { formik, t } = useFormField(name, props)
-  const imageUrl = formik.values[name] ? BaseURL + formik.values[name] :  '';
+  const imageUrl = formik.values[name] ? BaseURL_IMAGE + formik.values[name] :  '';
 
   const fileList: UploadFile[] = [
 

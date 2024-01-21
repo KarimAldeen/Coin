@@ -12,7 +12,7 @@ import { BaseURL, BaseURL_IMAGE } from '../../api/config';
 
 
 const ColumnsImage= ({src}:any) => {
-  const imageUrl = BaseURL+src;
+  const imageUrl = BaseURL_IMAGE+src;
 
   // or you can download flipped and rotated image
   // https://codesandbox.io/s/zi-ding-yi-gong-ju-lan-antd-5-7-0-forked-c9jvmp

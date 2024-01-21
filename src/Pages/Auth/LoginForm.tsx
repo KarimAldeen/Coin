@@ -30,7 +30,7 @@ const LoginForm = () => {
 
   return (
     <div className='LoginForm'>
-      <img className='Logo' src="/Layout/etaxlogo.svg" alt="Logo" />
+      <img className='Logo' src="/logo3.png" alt="Logo" />
 
       <nav className='Login_Nav'>
         <h5> {t("Login")} </h5>

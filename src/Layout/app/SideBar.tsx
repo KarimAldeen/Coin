@@ -36,7 +36,7 @@ const SideBar: React.FC<SidebarProps> = () => {
     <div className={isOpenSide ? 'SideBar SideBar_Open' : 'SideBar noOpen'}>
       <div className='SideBar_Top' style={{display:"flex" , justifyContent:"space-around"}}>
         <div onClick={handleImg} >
-         <img src="/logo.png" width={isOpenSide ? 50 :80}   alt="" className='bg-secondary' />
+         <img src="/logo3.png" width={isOpenSide ? 50 :80}   alt="" className='' />
          
         </div>
         <div className='HamburgerMenu' onClick={handleHamburgerMenu}>

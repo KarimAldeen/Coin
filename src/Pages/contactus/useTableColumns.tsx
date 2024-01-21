@@ -31,6 +31,8 @@ const useTableColumns :any = () => {
         cell: (row:any) => {
           
           const inputDate = new Date(row?.created_at)
+          console.log(inputDate);
+          
            return   `${inputDate.getFullYear()}-${(inputDate.getMonth() + 1)}-${(inputDate.getDate())} ${(inputDate.getHours())}:${(inputDate.getMinutes())}:${(inputDate.getSeconds())}`;
 
         }
