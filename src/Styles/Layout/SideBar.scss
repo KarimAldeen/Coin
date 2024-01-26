@@ -7,8 +7,6 @@
     width: 260px;
     height: 100%;
     position: fixed;
-    top: 0;
-    left: 0;
     background: var(--bg);
     transition: .3s ease-in-out;
 @include Shadow;
@@ -170,7 +168,7 @@ overflow-x: hidden;
     }
     .SideBar_Link {
         &:hover {
-            background-color: var(--primary);
+            background-color: rgba(16 18 27 / 40%);
             backdrop-filter: blur(24px);
            }
         &:hover{

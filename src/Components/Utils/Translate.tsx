@@ -54,21 +54,25 @@ export default function Translate() {
     <Menu menuButton={<MenuButton>
       {What_the_language  === "ar" ?  
        <>
-        <img alt='' src={`/Layout/Ar.svg`} width={20} height={20} />  {t("Arabic")}
+        {/* <img alt='' src={`/Layout/Ar.svg`} width={20} height={20} />  */}
+         {t("Arabic")}
        </>
 
       : 
         <>
-              <img alt='' src={`/Layout/En.svg`} width={20} height={20} /> {t("English")}
+              {/* <img alt='' src={`/Layout/En.svg`} width={20} height={20} />  */}
+              {t("English")}
 
         </>
       }
     </MenuButton>} transition>
       <MenuItem onClick={() => changeLanguage('Ar')}>
-        <img alt='' src='/Layout/Ar.svg' width={20} height={20} />  {t("Arabic")}
+        {/* <img alt='' src='/Layout/Ar.svg' width={20} height={20} /> */}
+          {t("Arabic")}
       </MenuItem>
       <MenuItem onClick={() => changeLanguage('En')}>
-        <img alt='' src='/Layout/En.svg' width={20} height={20} /> {t("English")}
+        {/* <img alt='' src='/Layout/En.svg' width={20} height={20} />  */}
+        {t("English")}
       </MenuItem>
     </Menu>
    
