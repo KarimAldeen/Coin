@@ -12,16 +12,17 @@ import { useTranslation } from 'react-i18next';
 function FormContactus() {
 
   const [t] = useTranslation()
-  const  {objectToEdit:letter} = usePageState()
+  const  {objectToEdit:letter} = usePageState();
 
 
   return (
     <div className="contact-letter">
-    <h3>{t('contact_us_letter')}</h3>
+    <h3>{t('Become Partner letter')}</h3>
     <div className="letter-content">
       <p><strong>{t('name')}:</strong> {letter.name}</p>
-      <p><strong>{t("email")}:</strong> {letter.email}</p>
-      <p><strong>{t("message")}:</strong> <p>{letter.message}</p></p>
+      <p><strong>{t("description")}:</strong> {letter.description}</p>
+      <p><strong>{t("price")}:</strong> {letter.price}</p>
+      <p><strong>{t("message")}:</strong> <p>{letter.note}</p></p>
     </div>
   </div>
   )

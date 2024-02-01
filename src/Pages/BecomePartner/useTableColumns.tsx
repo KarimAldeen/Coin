@@ -16,19 +16,28 @@ const useTableColumns :any = () => {
         center: "true",
         cell: (row: any) => {
           return (
-            <ColumnsImage src={row?.product_image} />
+            <ColumnsImage src={row?.image} />
           )
         }
       },
       {
-        name: t("Name"),
+        name: t("image2"),
+        center: "true",
+        cell: (row: any) => {
+          return (
+            <ColumnsImage src={row?.image2} />
+          )
+        }
+      },
+      {
+        name: t("name"),
         sortable: false,
         center: "true",
         cell: (row:any) => row?.name
       },
      
       {
-        name: t("Price"),
+        name: t("price"),
         sortable: false,
         center: "true",
         cell: (row:any) => row?.price

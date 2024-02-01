@@ -13,7 +13,7 @@ function EditPartnerModal() {
      isAddModal={false}
      getInitialValues={getInitialValues(objectToEdit)} 
      handleSubmit={() => { }}
-     headerText='Edit Modal' 
+     headerText='View Product' 
      getValidationSchema={getValidationSchema(objectToEdit)}>
 
       <FormPartner />

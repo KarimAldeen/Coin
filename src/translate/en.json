@@ -926,12 +926,14 @@
         "category_name_en":"Category Name en",
         "category_name_ar":"Category Name ar",
         "Become Partner":"Become Partner",
+        "BecomePartner":"Become Partner",
         "Coin Price":"Coin Price",
         "Coin Description":"Coin Description",
         "Coin Name":"Coin Name",
         "enter Coin description":"enter Coin description",
         "enter Coin Name":"enter Coin Name",
-        "enter coin price":"enter coin price"
-
-        
+        "enter coin price":"enter coin price",
+        "descripion":"Descripion",
+        "Become Partner letter":"Become Partner letter",
+        "View Product":"View Product"
 }
