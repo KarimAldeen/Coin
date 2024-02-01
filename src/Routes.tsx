@@ -36,6 +36,7 @@ import Order from "./Pages/order/view-one/Order";
 import AddProductPage from "./Pages/Products/View/AddPage";
 import ContactusPage from "./Pages/contactus/ContactusPage";
 import SlidersPage from "./Pages/sliders/SlidersPage";
+import BecomePartnerPage from "./Pages/BecomePartner/BecomePartnerPage";
 
 
 interface RoutesLinksType {
@@ -104,7 +105,6 @@ export const RoutesLinks: RoutesLinksType[] = [
         href: "/contact",
         element: <ContactusPage/>,
     },
-  
     {
         name: "social_media",
         
@@ -134,6 +134,13 @@ export const RoutesLinks: RoutesLinksType[] = [
 
 
       
+    },
+    {
+        name: "BecomePartner",
+        
+        icon: <FaMessage   size={20} />,
+        href: "/BecomePartner",
+        element: <BecomePartnerPage/>,
     },
           // hidden 
 
