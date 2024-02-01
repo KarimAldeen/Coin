@@ -2,6 +2,7 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Actions from "../../Components/Ui/tables/Actions";
+import ColumnsImage from "../../Components/Columns/ColumnsImage";
 
 function fnDelete(props :any ){}
 
@@ -10,19 +11,27 @@ const useTableColumns :any = () => {
 
   return useMemo(
     () => [
- 
       {
-        name: t("email"),
-        sortable: false,
+        name: t("image"),
         center: "true",
-        cell: (row:any) => row?.email
+        cell: (row: any) => {
+          return (
+            <ColumnsImage src={row?.product_image} />
+          )
+        }
       },
-     
       {
-        name: t("name"),
+        name: t("Name"),
         sortable: false,
         center: "true",
         cell: (row:any) => row?.name
+      },
+     
+      {
+        name: t("Price"),
+        sortable: false,
+        center: "true",
+        cell: (row:any) => row?.price
       },
       {
         name: t("created_at"),
@@ -43,7 +52,6 @@ const useTableColumns :any = () => {
         center: "true",
         cell: (row) => (
             <Actions
-
             // importnat to return the row in on Edit Function to store in objectToEdit That Upper in Edit Modal 
               onEdit={() => row}
               onView={()=>{}}
